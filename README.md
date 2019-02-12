@@ -16,6 +16,10 @@ http://www.wxapp-union.com/article-4473-1.html
 可以参考新浪财经实时新闻布局  
 
 
+## tabBar
+自定义tabBar
+https://www.jianshu.com/p/cb70eed7f8c3  
+
 ## todo
 发布比赛
 
