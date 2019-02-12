@@ -8,7 +8,7 @@ info about marathon
 [sample](http://www.cnblogs.com/wujy/p/3897501.html)  
 返回路径列表  
 [path](https://lbs.amap.com/api/webservice/guide/api/direction)  
-
+[demo](https://restapi.amap.com/v3/direction/walking?origin=116.434307,39.90909&destination=116.434446,39.90816&key=3ebd8ce42f659bc3589b11b586cbd342)
 
 ## timeline
 https://blog.csdn.net/oschina_41661541/article/details/81217619  
@@ -16,8 +16,8 @@ http://www.wxapp-union.com/article-4473-1.html
 可以参考新浪财经实时新闻布局  
 
 
-## demo
+## todo
+发布比赛
 
-https://restapi.amap.com/v3/direction/walking?origin=116.434307,39.90909&destination=116.434446,39.90816&key=3ebd8ce42f659bc3589b11b586cbd342
 
 

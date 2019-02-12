@@ -1,7 +1,7 @@
 <view class='weui-cell-third'>
   <view class="page__title">工作动态</view>
 
-  <block wx:for="{{axis}}" wx:key="*this">
+  <block wx:for="{{axis}}" wx:key="time">
     <view class='weui-cell-list'>
       <view class='weui-cell-circle'></view>
       <view class='weui-cell-line'>
@@ -10,5 +10,5 @@
         <view class='weui-cell-event'>{{item.event}}</view>
       </view>
     </view>
-    </block>
+  </block>
 </view>
