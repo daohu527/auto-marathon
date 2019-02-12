@@ -1,0 +1,3 @@
+<import src="../template/marathon.wxml"/>
+
+<template is="marathon" data="{{text: "hello marathon"}}"/>
