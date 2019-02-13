@@ -15,12 +15,14 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    that.user = that.globalData.db.collection('user')
-    that.user.where({
-      _openid: 'xxx'
+    that.marathon = wx.cloud.database().collection('user')
+    that.marathon.where({
+      _openid: 'o1vJn5J5SrlyNdkkgGdFCt9gnjyU'
     }).get().then(res => {
       console.log(res.data)
-      that.data.axis.push(res.data);
+      that.setData({
+        axis: res.data
+      })
     }).catch(err => {
       console.error(err)
     })
@@ -58,11 +60,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    db.collection('contest')
-    .orderBy('date', 'asc')
-    .get()
-    .then(console.log)
-    .catch(console.error)
+    
   },
 
   /**

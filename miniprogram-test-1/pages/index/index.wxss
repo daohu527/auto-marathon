@@ -3,7 +3,7 @@
 }
 .weui-cell-list{
   background: #fff;
-  margin: 5px 50px 5px 50px;
+  margin: 10px 5px 5px 10px;
 }
 .weui-cell-line{
 /* width: 100px; */
@@ -14,9 +14,9 @@
 }
 .weui-cell-circle{
   border: 1px solid #000;
-  border-radius: 3px;
-  width: 6px;
-  height: 6px;
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
   border-color: blue;
 }
 .weui-cell-time{
@@ -27,14 +27,15 @@
   width: 72px;
 }
 .weui-cell-event{
-  padding-top: 15px;
-  padding-left: 15px;
-}
-.weui-cell-name{
   font-size:14px;
   height:23px;
   margin-left: 100px;
 }
+.weui-cell-name{
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
 .searchbar-result{
     margin-top: 0;
     font-size: 14px;
