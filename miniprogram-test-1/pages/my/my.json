@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "i-avatar": "../../dist/avatar/index",
+    "van-cell": "../../components/cell/index",
+    "van-cell-group": "../../components/cell-group/index"
+  }
 }

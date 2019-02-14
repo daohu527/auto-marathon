@@ -1,53 +1,36 @@
-<view class="page">
-    <view class="page__bd">
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
-                <view class="weui-search-bar__box">
-                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                        <icon type="clear" size="14"></icon>
-                    </view>
-                </view>
-                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-                    <icon class="weui-icon-search" type="search" size="14"></icon>
-                    <view class="weui-search-bar__text">搜索</view>
-                </label>
-            </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-        </view>
-        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-        </view>
-    </view>
-</view>
+<!-- <import src="../template/marathon.wxml"/>
 
-<block wx:for="{{axis}}" wx:key="time">
-  <view class='weui-cell-list'>
-    <view class='weui-cell-circle'></view>
-    <view class='weui-cell-line'>
-      <view class='weui-cell-time'>{{item.date}}</view>
-      <view class='weui-cell-event'>{{item.event}}</view>
-      <view class='weui-cell-name'>{{item.name}}</view>
-    </view>
-  </view>
-</block>
+<template is="marathon" data="{{text: 'hello marathon'}}"/> -->
+<view class='container'>
+  <van-search class="van-search"></van-search>
+
+  <swiper class='wuxi-swiper'
+    indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' circular='{{circular}}' vertical='{{vertical}}'
+    interval='{{interval}}' duration='{{duration}}' previous-margin='{{previousMargin}}px' 
+    next-margin='{{nextMargin}}px'>
+    <block wx:for="{{background}}" wx:key='*this'>
+      <swiper-item>
+        <view>
+          <image class='swiper-image' src='{{imageIndexUrl+item.imageid+imageFormat}}'></image>
+        </view>
+        <view class="swiper-item {{item.text}}"></view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <van-tabs class="van-tabs" active="{{active}}" bind: change="onChange">
+    <van-tab title="全部"></van-tab>
+    <van-tab title="热门"></van-tab>
+    <van-tab title="附近"></van-tab>
+  </van-tabs>
+
+  <view class='sportCardsSpace'></view>
+  <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
+    <view class='sportCardsSpace'></view>
+    <i-card class='i-card' title='{{item.title}}' extra='{{item.date}}' thumb='{{imageCardUrl+item.imageid+imageFormat}}'
+    wx:if="{{item.imageid}}">
+      <view slot="content">{{item.body}}</view>
+      <view slot="footer">{{item.footer}}</view>
+    </i-card>
+  </block>
+</view>

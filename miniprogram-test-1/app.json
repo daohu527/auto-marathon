@@ -1,8 +1,12 @@
 {
+  "usingComponents": {
+  },
   "pages": [
     "pages/index/index",
-    "pages/contest/contest",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/my/contest/contest",
+    "pages/my/favorites/favorites",
+    "pages/my/tools/tools"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,15 +19,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/contest/contest",
-        "text": "比赛"
+        "text": "比赛",
+        "iconPath": "pages/images/icon-contest.png",
+        "selectedIconPath": "pages/images/icon-contest-HL.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我",
+        "iconPath": "pages/images/icon-user.png",
+        "selectedIconPath": "pages/images/icon-user-HL.png"
       }
     ]
   },

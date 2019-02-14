@@ -27,7 +27,5 @@ App({
 
       this.globalData.db = wx.cloud.database()
     }
-
-
   }
 })

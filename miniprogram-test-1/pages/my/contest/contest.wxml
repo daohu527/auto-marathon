@@ -1,0 +1,12 @@
+<!-- <import src="../searchbar/searchbar.wxml"/> -->
+<view class='wxui-container'>
+  <block wx:for="{{axis}}" wx:key="date">
+    <view class='weui-cell-list'>
+      <view class='weui-cell-line'></view>
+      <view class='weui-cell-time'>{{item.date}}</view>
+      <block wx:for="{{item.data}}" wx:key="name">
+        <view class='weui-cell-name'>{{item.title}}</view>
+      </block>
+    </view>
+  </block>
+</view>

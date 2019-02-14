@@ -1,30 +1,61 @@
-//index.js
-const app = getApp()
-
+// pages/contest/contest.js
 Page({
-  user: undefined,
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    axis: [],
-    inputShowed: false,
-    inputVal: ""
+    active: 0,
+    imageIndexUrl: "cloud://marathon-f4f2b4.6d61-marathon-f4f2b4/imageIndex/",
+    background: [
+      {
+        name: "demo-text-1",
+        imageid: "image1"
+      },
+      {
+        name: "demo-text-2",
+        imageid: "image2"
+      },
+      {
+        name: "demo-text-3",
+        imageid: "image3"
+      }
+    ],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: false,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0,
+    imageCardUrl: "cloud://marathon-f4f2b4.6d61-marathon-f4f2b4/image/",
+    imageFormat: ".jpg",
+    marathonData: []
   },
 
-  
+  onChange(event) {
+    //切换标签
+    wx.showToast({
+      title: '切换到标签 ${event.detail.index + 1}',
+      icon: 'none'
+    });
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
-    that.marathon = wx.cloud.database().collection('user')
-    that.marathon.where({
-      _openid: 'o1vJn5J5SrlyNdkkgGdFCt9gnjyU'
-    }).get().then(res => {
-      console.log(res.data)
-      that.setData({
-        axis: res.data
-      })
-    }).catch(err => {
-      console.error(err)
+    that.marathon = wx.cloud.database().collection('marathon')
+    that.marathon.limit(10).get({
+      success(res) {
+        console.log("data", res.data)
+        that.setData({
+          marathonData: res.data
+        })
+      }
     })
   },
 
@@ -32,7 +63,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -60,7 +91,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
@@ -75,32 +106,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-
-  /**
-   * Search Bar
-   */
-  showInput: function () {
-      this.setData({
-          inputShowed: true
-      });
-  },
-  hideInput: function () {
-      this.setData({
-          inputVal: "",
-          inputShowed: false
-      });
-  },
-  clearInput: function () {
-      this.setData({
-          inputVal: ""
-      });
-  },
-  inputTyping: function (e) {
-      this.setData({
-          inputVal: e.detail.value
-      });
   }
-
 })

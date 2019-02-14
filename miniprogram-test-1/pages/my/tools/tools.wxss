@@ -1,0 +1,21 @@
+/* pages/my/tools/tools.wxss */
+page {
+  height: 100%;
+  width: 100%;
+}
+.grid-container {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.grid-row {
+  width: 33.3%;
+}
+.grid-image{
+  margin:auto;
+  width:64px;
+  height:64px;
+}

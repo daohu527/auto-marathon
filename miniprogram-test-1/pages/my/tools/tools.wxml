@@ -1,0 +1,9 @@
+<!--pages/my/tools/tools.wxml-->
+<view class="grid-container">
+  <view class='grid' wx:for="{{routers}}" wx:key="name">
+    <navigator url="{{item.url}}">
+      <image class='grid-image' src="{{item.icon}}"/>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+</view>
