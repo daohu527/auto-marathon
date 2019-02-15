@@ -23,7 +23,7 @@ Page({
     ],
     indicatorDots: true,
     vertical: false,
-    autoplay: true,
+    autoplay: false,
     circular: false,
     interval: 2000,
     duration: 500,

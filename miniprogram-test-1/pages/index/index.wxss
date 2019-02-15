@@ -1,29 +1,23 @@
 /* pages/contest/contest.wxss */
 @import "../../weui.wxss";
 page {
-  background-color: #F8F8F8;
-  height: 100%;
-  line-height: 1.6;
+  width: 100%;
 }
-.container {
+.wxui-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .van-search{
-  justify-content: flex-start;
   width: 100%;
 }
-.wuxi-swiper{
-  align-items: center;
-  width: 100%;
+.wxui-swiper{
+  width: 90%;
 }
 .van-tabs{
   width: 100%;
 }
-.sportCardsSpace{
-  height: 5px;
-}
-.i-card {
+.sportCard {
   width: 100%;
+  margin-top: 5px;
 }

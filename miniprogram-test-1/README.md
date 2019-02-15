@@ -18,6 +18,27 @@ https://segmentfault.com/a/1190000012250564
 https://segmentfault.com/a/1190000015806971  
 
 
+# 跳转
+https://segmentfault.com/a/1190000016215482  
+
+# 布局
+https://juejin.im/post/5b0d344df265da08f860989e  
+https://yeaseonzhang.github.io/2017/07/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Flex%E5%B1%9E%E6%80%A7/  
+
+
+# Todo
+1. 卡片样式（缩略），放大样式
+2. 分页加载
+3. 搜索
+4. tab取消附近，增加热门标签
+
+# feature
+1. 中间导航为发布私有比赛，发布组队等信息
+2. 工具栏需要查看下常用的工具有哪些
+3. 比赛为比赛统计
+4. 增加PB，参加场次，统计等
+5. 
+
 # Reference
 [Tutorial](https://www.jianshu.com/p/f0ae364811b7)  
 [Tutorial](https://www.jianshu.com/p/e3de2c605506)  

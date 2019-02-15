@@ -1,0 +1,23 @@
+<!--mycom/sportcard.wxml-->
+<view class='container'>
+  <view class='my-card__header'>
+    <view class='my-card__thumb' bindtap='onClickThumb'>
+      <image 
+        wx:if="{{thumb}}"
+        src="{{thumb}}"
+        mode='{{thumbMode}}'
+        lazy-load='{{lazyLoad}}'
+        class='my-card_img thumb-class'
+      />
+    </view>
+
+    <view class='my-card__content'>
+      <view wx:if="{{title}}" class='my-card__title title-class'>{{title}}</view>
+      <view wx:if="{{desc}}" class='my-card__desc desc-class'>{{desc}}</view>
+    </view>
+  </view>
+  
+  <view class='my-card__footer'>
+    <slot name='footer'/>
+  </view>
+</view>

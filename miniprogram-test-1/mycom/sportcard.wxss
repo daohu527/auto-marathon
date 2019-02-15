@@ -1,0 +1,28 @@
+/* mycom/sportcard.wxss */
+.page {
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.my-card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.my-card__thumb {
+  display: flex;
+  flex-grow: 0;
+  width: 90px;
+  height: 90px;
+}
+.my-card__content {
+  display: flex;
+  flex-grow: 1;
+  width: 70%;
+}
+.my-card__footer  {
+  display: flex;
+  justify-content: flex-end;
+}

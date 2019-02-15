@@ -6,6 +6,8 @@ Page({
   user: undefined,
   data: {
     axis: [],
+    imageCardUrl: "cloud://marathon-f4f2b4.6d61-marathon-f4f2b4/image/",
+    imageFormat: ".jpg",
   },
 
   onChange(event) {

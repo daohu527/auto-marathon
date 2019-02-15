@@ -5,8 +5,19 @@
       <view class='weui-cell-line'></view>
       <view class='weui-cell-time'>{{item.date}}</view>
       <block wx:for="{{item.data}}" wx:key="name">
-        <view class='weui-cell-name'>{{item.title}}</view>
+
+
+        <van-card class="sportCard"
+        desc="{{item.date}}"
+        title="{{item.title}}"
+        thumb="{{imageCardUrl+item.imageid+imageFormat}}">
+          <view slot="footer">
+            <van-button size="mini">收藏</van-button>
+            <van-button size="mini">分享</van-button>
+          </view>
+        </van-card>
+
       </block>
-    </view>
+    </view>  
   </block>
 </view>

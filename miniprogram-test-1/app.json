@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-button": "/components/button/index"
   },
   "pages": [
     "pages/index/index",

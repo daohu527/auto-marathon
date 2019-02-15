@@ -1,22 +1,20 @@
 <!-- <import src="../template/marathon.wxml"/>
 
 <template is="marathon" data="{{text: 'hello marathon'}}"/> -->
-<view class='container'>
+<view class='wxui-container'>
   <van-search class="van-search"></van-search>
 
-  <swiper class='wuxi-swiper'
-    indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' circular='{{circular}}' vertical='{{vertical}}'
-    interval='{{interval}}' duration='{{duration}}' previous-margin='{{previousMargin}}px' 
-    next-margin='{{nextMargin}}px'>
-    <block wx:for="{{background}}" wx:key='*this'>
-      <swiper-item>
-        <view>
+  <view class='wxui-swiper'>
+    <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' circular='{{circular}}' vertical='{{vertical}}'
+      interval='{{interval}}' duration='{{duration}}' previous-margin='{{previousMargin}}px' 
+      next-margin='{{nextMargin}}px'>
+      <block wx:for="{{background}}" wx:key='*this'>
+        <swiper-item>
           <image class='swiper-image' src='{{imageIndexUrl+item.imageid+imageFormat}}'></image>
-        </view>
-        <view class="swiper-item {{item.text}}"></view>
-      </swiper-item>
-    </block>
-  </swiper>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 
   <van-tabs class="van-tabs" active="{{active}}" bind: change="onChange">
     <van-tab title="全部"></van-tab>
@@ -24,13 +22,28 @@
     <van-tab title="附近"></van-tab>
   </van-tabs>
 
-  <view class='sportCardsSpace'></view>
+  <!-- <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
+    <van-card class="sportCard"
+    desc="{{item.date}}"
+    title="{{item.title}}"
+    thumb="{{imageCardUrl+item.imageid+imageFormat}}">
+      <view slot="footer">
+        <van-button size="mini">收藏</van-button>
+        <van-button size="mini">分享</van-button>
+      </view>
+    </van-card>
+  </block> -->
+
   <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
-    <view class='sportCardsSpace'></view>
-    <i-card class='i-card' title='{{item.title}}' extra='{{item.date}}' thumb='{{imageCardUrl+item.imageid+imageFormat}}'
-    wx:if="{{item.imageid}}">
-      <view slot="content">{{item.body}}</view>
-      <view slot="footer">{{item.footer}}</view>
-    </i-card>
-  </block>
+    <my-card class="sportCard"
+    desc="{{item.date}}"
+    title="{{item.title}}"
+    thumb="{{imageCardUrl+item.imageid+imageFormat}}">
+      <view slot="footer">
+        <van-button size="mini">收藏</van-button>
+        <van-button size="mini">分享</van-button>
+      </view>
+    </my-card>
+  </block>  
+
 </view>

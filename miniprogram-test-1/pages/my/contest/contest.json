@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+        "van-card": "../../../components/card/index"
   }
 }
