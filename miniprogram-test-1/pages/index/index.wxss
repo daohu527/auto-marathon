@@ -14,10 +14,12 @@ page {
 .wxui-swiper{
   width: 90%;
 }
+.swiper-image {
+  lazy-load: true;
+}
 .van-tabs{
   width: 100%;
 }
 .sportCard {
   width: 100%;
-  margin-top: 5px;
 }

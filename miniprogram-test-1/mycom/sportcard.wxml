@@ -1,5 +1,5 @@
 <!--mycom/sportcard.wxml-->
-<view class='container'>
+<view class='my-card'>
   <view class='my-card__header'>
     <view class='my-card__thumb' bindtap='onClickThumb'>
       <image 

@@ -19,7 +19,6 @@
   <van-tabs class="van-tabs" active="{{active}}" bind: change="onChange">
     <van-tab title="全部"></van-tab>
     <van-tab title="热门"></van-tab>
-    <van-tab title="附近"></van-tab>
   </van-tabs>
 
   <!-- <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
@@ -34,14 +33,23 @@
     </van-card>
   </block> -->
 
+  <scroll-view 
+    scroll-y
+  >
+  
+  </scroll-view>
+
   <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
     <my-card class="sportCard"
     desc="{{item.date}}"
     title="{{item.title}}"
     thumb="{{imageCardUrl+item.imageid+imageFormat}}">
       <view slot="footer">
-        <van-button size="mini">收藏</van-button>
-        <van-button size="mini">分享</van-button>
+        <van-icon wx:if="{{item.isFavorite}}" id="{{index}}" name="star" 
+        color="yellow" size="10" bind:click="onIconClick">收藏</van-icon>
+        <van-icon wx:else id="{{index}}" name="star-o" 
+        color="inherit" size="10" bind:click="onIconClick">收藏</van-icon>
+
       </view>
     </my-card>
   </block>  

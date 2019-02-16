@@ -26,6 +26,12 @@ https://juejin.im/post/5b0d344df265da08f860989e
 https://yeaseonzhang.github.io/2017/07/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Flex%E5%B1%9E%E6%80%A7/  
 
 
+https://blog.csdn.net/KevinsCSDN/article/details/80351438
+
+# 异步
+https://blog.csdn.net/bocongbo/article/details/86132942  
+
+
 # Todo
 1. 卡片样式（缩略），放大样式
 2. 分页加载
@@ -37,7 +43,7 @@ https://yeaseonzhang.github.io/2017/07/05/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Fl
 2. 工具栏需要查看下常用的工具有哪些
 3. 比赛为比赛统计
 4. 增加PB，参加场次，统计等
-5. 
+
 
 # Reference
 [Tutorial](https://www.jianshu.com/p/f0ae364811b7)  

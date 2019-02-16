@@ -10,7 +10,7 @@
 	},
 	"appid": "wx4fc39e386a59c629",
 	"projectname": "miniprogram-test-1",
-	"libVersion": "2.2.5",
+	"libVersion": "2.4.0",
 	"condition": {
 		"search": {
 			"current": -1,

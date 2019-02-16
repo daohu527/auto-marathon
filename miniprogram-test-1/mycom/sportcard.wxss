@@ -2,25 +2,36 @@
 .page {
   width: 100%;
 }
-.container {
-  display: flex;
-  flex-direction: column;
+.my-card {
+  margin:0 16px;
+  font-size:14px;
+  overflow:hidden;
+  position:relative;
+  background:#fff;
+  border:1rpx solid #dddee1;
+  border-radius:5px;
 }
 .my-card__header {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .my-card__thumb {
-  display: flex;
-  flex-grow: 0;
+  flex:0;
+}
+.my-card_img {
+  display: inline-block;
   width: 90px;
   height: 90px;
+  position: relative;
+  margin-left:auto; 
+  margin-right:auto;
+  overflow:hidden;
+  background-size:cover;
+  vertical-align:middle;  
 }
 .my-card__content {
-  display: flex;
-  flex-grow: 1;
-  width: 70%;
+  flex: 1;
+  font-size: 10px;
 }
 .my-card__footer  {
   display: flex;
