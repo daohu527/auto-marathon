@@ -8,7 +8,7 @@
     <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' circular='{{circular}}' vertical='{{vertical}}'
       interval='{{interval}}' duration='{{duration}}' previous-margin='{{previousMargin}}px' 
       next-margin='{{nextMargin}}px'>
-      <block wx:for="{{background}}" wx:key='*this'>
+      <block wx:for="{{background}}" wx:key='imageid'>
         <swiper-item>
           <image class='swiper-image' src='{{imageIndexUrl+item.imageid+imageFormat}}'></image>
         </swiper-item>
@@ -39,17 +39,17 @@
   
   </scroll-view>
 
-  <block class='sportCards' wx:for="{{marathonData}}" wx:key="*this">
+  <block class='sportCards' wx:for="{{marathonData}}" wx:key="_id">
     <my-card class="sportCard"
     desc="{{item.date}}"
     title="{{item.title}}"
-    thumb="{{imageCardUrl+item.imageid+imageFormat}}">
+    thumb="{{imageCardUrl+item.imageid+imageFormat}}"
+    desc_add="{{index}}人关注">
       <view slot="footer">
         <van-icon wx:if="{{item.isFavorite}}" id="{{index}}" name="star" 
         color="yellow" size="10" bind:click="onIconClick">收藏</van-icon>
         <van-icon wx:else id="{{index}}" name="star-o" 
         color="inherit" size="10" bind:click="onIconClick">收藏</van-icon>
-
       </view>
     </my-card>
   </block>  

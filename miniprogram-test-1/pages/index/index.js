@@ -39,7 +39,7 @@ Page({
 
   // 更新收藏
   checkAndPush (arr, value) {
-    // var favorites = JSON.parse(arr)
+
     var favorites = arr
     var index = favorites.indexOf(value)
 
@@ -59,14 +59,21 @@ Page({
   updateUserData: function (id, key, value) {
     var that = this
     that.user = wx.cloud.database().collection('user')
+    
+    console.log(id, key, value)
+
     that.user.doc(id).update({
       data: {
-        key: value
+        [key]: value
       },
       success(res) {
-        console.log("updateUserData", res.data)
+        console.log("updateUserData", res)
+      },
+      fail: err => {
+        console.log(err)
       }
     })
+    
   },
 
   onIconClick(event) {
@@ -75,17 +82,17 @@ Page({
 
     var index = parseInt(event.target.id)
     var _id = that.data.marathonData[index]._id
+    var isFavorite = that.data.marathonData[index].isFavorite
+
     var _value = app.globalData.userInfo.favorites
     _value = that.checkAndPush(_value, _id)
 
     app.globalData.userInfo.favorites = _value
 
-    that.updateUserData(app.globalData.openid, "favorites", _value)
+    that.updateUserData(app.globalData.userInfo.userid, "favorites", _value)
 
-    var key = "that.data.marathonData["+index+"].isFavorites"; 
-    var value = !that.data.marathonData[index].isFavorites
-    
-    console.log(key, value)
+    var key = "marathonData["+index+"].isFavorite"; 
+    var value = !that.data.marathonData[index].isFavorite
 
     that.setData({
       [key]: value
@@ -103,8 +110,9 @@ Page({
   },
 
   setFavorites(marathonData) {
-    var favorites =JSON.parse( app.globalData.userInfo.favorites )
-    app.globalData.userInfo.favorites = favorites
+    console.log("setFavorites", app.globalData.userInfo)
+    var favorites = app.globalData.userInfo.favorites
+
     console.log(favorites)
     marathonData.forEach( (m) => {
       // console.log("load index", m._id)
@@ -123,14 +131,20 @@ Page({
     that.marathon.skip(skipindex * that.data.pagenum)
     .limit(that.data.pagenum).get({
       success(res) {
-        console.log("res data", res.data)
+        console.log("getMarathonData", res.data)
         // 页尾
         if (res.data.length === 0) {
           that.data.ispageend = true
         }
         
         // 设置收藏
-        that.setFavorites(res.data)
+        if (app.globalData.userInfo != undefined) {
+          that.setFavorites(res.data)
+        } else {
+          console.log("app.globalData.userInfo is undefined!")
+        }
+
+        console.log("skipindex", skipindex)
 
         // 分页加载
         if (skipindex === 0) {
@@ -207,6 +221,7 @@ Page({
 
     if (!that.data.ispageend) {
       that.data.pageindex += 1
+      console.log(that.data.pageindex)
       that.getMarathonData('marathon', that.data.pageindex)
     } else {
       wx.showToast({

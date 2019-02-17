@@ -31,7 +31,17 @@
 }
 .my-card__content {
   flex: 1;
-  font-size: 10px;
+  font-size: 12px;
+}
+.my-card__title {
+  margin: 5px 0px 5px 10px;
+  font-family: '黑体';
+  font-size: 16px;
+  font-weight:bold;
+}
+.my-card__desc {
+  margin: 0px 0px 5px 10px;
+  /* font-size: 10px; */
 }
 .my-card__footer  {
   display: flex;

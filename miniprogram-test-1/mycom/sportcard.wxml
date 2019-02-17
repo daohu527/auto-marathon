@@ -14,6 +14,7 @@
     <view class='my-card__content'>
       <view wx:if="{{title}}" class='my-card__title title-class'>{{title}}</view>
       <view wx:if="{{desc}}" class='my-card__desc desc-class'>{{desc}}</view>
+      <view wx:if="{{desc}}" class='my-card__desc desc-class'>{{desc_add}}</view>
     </view>
   </view>
   

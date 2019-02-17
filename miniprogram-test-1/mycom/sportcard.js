@@ -18,6 +18,7 @@ Component({
     lazyLoad: Boolean,
     title: String,
     desc: String,
+    desc_add: String,
   },
 
   /**

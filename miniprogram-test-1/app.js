@@ -1,6 +1,7 @@
 //app.js
 App({
   globalData : {
+    userid: undefined,
     db: undefined,
     userInfo: undefined
   },
@@ -25,12 +26,20 @@ App({
 
           // 读取收藏列表
           that.globalData.db = wx.cloud.database()
-          that.globalData.db.collection('user').doc(that.globalData.openid).get({
+          that.globalData.db.collection('user').where({
+            _openid: that.globalData.openid
+          }).get({
             success(res) {
               // res.data 包含该记录的数据
+              // console.log(res)
 
-              that.globalData.userInfo = res.data
-              console.log('userinfo', that.globalData.userInfo)
+              // 由于openid无法作为key? 长度超过要求？
+              that.globalData.userInfo = res.data[0]
+              console.log('userinfo', that.globalData.userInfo.favorites)
+             
+            },
+            fail(err) {
+              console.log(err)
             }
           })
         },
